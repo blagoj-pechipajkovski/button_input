@@ -1,0 +1,22 @@
+###########################################
+# Syntax Coloring Map For DHT-sensor-library
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+
+ButtonInput	KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+
+begin	KEYWORD2
+on_press	KEYWORD2
+on_hold	KEYWORD2
+on_release	KEYWORD2
+loop_all	KEYWORD2
+hold_wait	KEYWORD2
+hold_interval	KEYWORD2
+
