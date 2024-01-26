@@ -17,7 +17,7 @@ ButtonInput btn;
 
 ### Initialization
 
-Specify pin, active state, and input type. Active state means the state when the button is pressed.
+Specify pin, active state, and input type. Active state refers to the state when the button is pressed.
 
 ```c++
 btn.begin(27, LOW, INPUT_PULLUP);
@@ -53,7 +53,7 @@ btn.set_on_press_as_hold();
 
 ### Loop
 
-Make sure to call the loop function inside loop and make sure that your loop has no blocking code like ```delay()```.
+Make sure to call the loop function inside loop and make sure that your loop doesn't use any blocking code like ```delay()```.
 
 ```
 ButtonInput::loop_all();
@@ -63,7 +63,7 @@ ButtonInput::loop_all();
 
 This library has software de-bouncing, the state of the pin is read at max every 5ms. That sould be faster than someone could lift thier finger, but still fast enough so that the delay is not noticable, and slow enough for the state of the pin to stabilise.
 
-On the initial press of the button the ```on_press``` handler is called. After executing there is an initial delay before starting to execute the hold function. The initial delay between ```on_press``` and ```on_hold``` is 1000ms, after which the ```on_hold``` handler is called for the first time. After the first execution, the ```on_hold``` handler is repeatedly called every 500ms. Lastly when the user releases the button the ```on_release``` handler is called.
+On the initial press of the button the ```on_press``` handler is called. After executing there is an initial delay until ```on_hold``` is called which is 1000ms. After the first time ```on_hold``` handler is called, the ```on_hold``` handler is repeatedly called every 500ms. Lastly when the user releases the button the ```on_release``` handler is called.
 
 ```
                [hold_wait]                [hold_interval]           [hold_interval]
