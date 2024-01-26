@@ -63,7 +63,7 @@ ButtonInput::loop_all();
 
 This library has software de-bouncing, the state of the pin is read at max every 5ms. That sould be faster than someone could lift thier finger, but still fast enough so that the delay is not noticable, and slow enough for the state of the pin to stabilise.
 
-On the initial press of the button the ```on_press``` handler is called. After executing there is an initial delay until ```on_hold``` is called which is 1000ms. After the first time ```on_hold``` handler is called, the ```on_hold``` handler is repeatedly called every 500ms. Lastly when the user releases the button the ```on_release``` handler is called.
+On the initial press of the button the ```on_press``` handler is called. After executing there is an initial delay until the ```on_hold``` handler is called, which is 1000ms. After the first execution, the ```on_hold``` handler is repeatedly called every 500ms. Lastly when the user releases the button the ```on_release``` handler is called.
 
 ```
                [hold_wait]                [hold_interval]           [hold_interval]
